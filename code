@@ -163,3 +163,56 @@ void moisture(){
     digitalWrite(motor,HIGH);}
     else {digitalWrite(motor,HIGH);}
    }
+#define ir1 A0
+#define ir2 A1
+bool state1 = true ;
+bool state2 = true ;
+int i = 0;
+int count = 0;
+void setup() {
+  Serial.begin(9600);
+ pinMode(ir1,INPUT);
+ pinMode(ir2,INPUT);
+int i = 0;
+int COUNT = 0;
+int j=3;
+}
+
+void loop() {
+ 
+  if (ir1){
+    state1=true;}
+   if (ir2){
+    state2= true;}
+   if (!digitalRead(ir1)&& i == 0){
+   delay(100);
+    
+    i++;
+    delay(100);
+  //  Serial.println(i);
+   }
+ else if (!digitalRead(ir2)&& i == 1){
+   
+   delay(100);
+    i--;
+    
+    count++;
+    delay(100);
+    Serial.println(count);}
+    else if (!digitalRead(ir2)&& i== 0){
+
+      delay(100);
+      
+      i++;
+      delay(100);}
+     // Serial.println(i);}
+      else if (!digitalRead(ir2)&& i== 1){
+        delay(100);
+        i--;
+        count--;
+        delay(100);
+        Serial.println(count);
+   //    Serial.println(i);
+      }
+      
+    }
